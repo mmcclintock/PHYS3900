@@ -27,7 +27,7 @@
 \usepackage{cleveref}                  % convenient refrencing use \Cref
 \usepackage{paralist}                  % compact itemize/enumerate
 \usepackage[hang, small, bf, margin=20pt]{caption} % captions for figures
-\usepackage{setspace}\onehalfspacing               % 1.5 line spacing
+\usepackage{setspace}%\onehalfspacing               % 1.5 line spacing
 \setlength{\parindent}{0cm}\usepackage{parskip}    % paragraph skip
 \usepackage[                                   % SI units
     load-configurations=abbreviations,         % unit abrev.
@@ -48,13 +48,108 @@
   \textbf{Michael McClintock}, Alex ------
 \end{center}
 
-\section*{Introduction/Background}
-\section*{Significance of Research}
+\section*{Introduction and Background}
+
+It is no secret that smartphones, tablets and other portable
+multimedia devices are on the rise. As reported in February 2012,
+487.7 million smartphones where shipped worldwide 2011.  This figure,
+up 63\% from 2010, also meant that smarthphone sales have overtaken
+the sale of personal computers \cite{canalys}. 
+
+There are a number of factors that make smartphone based learning
+(often referred to as ubiquitous learning or just ``u-learning") an
+effective, if not inevitable, compliment to the more traditional
+methods of course and content delivery. These factors include the
+widespread smartphone reliance of university students and staff
+\cite{procsmart}, high convenience, powerful
+multimedia capabilities and good wireless and internet connectivity. 
+
+While many universities have developed campus wide tools for
+smartphones. The use of u-learning solutions tailor-made for specific
+courses or subject areas is not widely accepted \cite{procsmart}.
+One reason is the lack of mature technology for content delivery that
+addresses technical issues such as platform independence. Another is the
+lack of examples and trials related to the design of content for
+u-learning systems.
+
+This project has two separate goals. The first is to find a simple
+solution that allows the delivery of u-learning content to smartphones
+and tablets. The second and more important goal is to produce and test
+some u-learning material for first year physics students.
+
+While subject specific u-learning material is a relatively new concept
+there is a great deal of research into what makes good ``e-learning"
+material where e-learning refers to the use of computers and internet
+in learning. Many of the generally accepted approaches to e-learning
+may be equally effective when transferred to a smartphone based
+system.
+
+\section*{Significance of Research and Expected Outcomes}
+
+Any method or aid that helps students absorb and understand a topic at
+a fundamental level is valuable to instructors. Finding this type of
+tool for physics is even more significant because the ideas and
+concepts of physics are generally more abstract and fundamental
+compared to other subject areas. 
+
+Designing, implementing and testing a u-learning system for a small
+part of a first year physics course allows for evaluation of the
+effectiveness of smartphone based systems. Following this project
+instructors should have some evidence of the advantages or
+disadvantages of u-learning systems for first year physics. As well as
+some ideas about how to create their own systems.
+
 \section*{Methodology and Design}
+
+Again when it comes to designing the solution there are two separate
+aspects. The first is the method of delivering the content and the
+second is the design of the content itself. While the second aspect is
+the main focus of the project it cannot be tested without an effective
+solution to the problem of content delivery.
+
+
+\subsubsection*{Content Delivery}
+
+Web 2.0 technologies such as blogs, wikis and interactive websites
+have changed the face of online interaction and collaboration
+\cite{procsmart}. These online applications are becoming good enough
+that at times its hard to know you're not running a native application
+on your PC. Also it is worth noting that web technologies (HTML, CSS
+and javascript) are open source, cross-platform, widespread and mature. 
+
+The major problem of delivering content effectively to the large
+number of smartphone and tablet like devices is dealing with their
+differences.  To develop a native application for Android users, the
+developer must be proficient with java and understand the Android
+specific libraries. A similar but conflicting approach is needed for
+iOS devices where one must understand Objective-C programming and the
+Apple specific toolkits. This all becomes very overwhelming when the
+goal is to achieve a simple content delivery system. 
+
+Luckily web browsers exist on all devices that comply to standard web
+technologies. This makes it possible to design u-learning content and
+then deliver it to the multitude of device in a consistent
+maintainable format. One project that aims to simplify this process is
+called PhoneGap \cite{phonegap}. To achieve simple content delivery
+this project aims to follow the approach of developing u-learning
+material using web technologies that are deliverable to a number of
+devices using technologies such as PhoneGap.
+
+\subsubsection*{U-Learning Physics Content}
+
+The content itself will be tailored to first year physics students at
+the University of Queensland. More specifically this project will be
+targetting the Fluids component of PHYS1171. The material will focus
+on the topics of buoyancy and the fluid dynamics of non-viscous
+fluids. The approach to designing content will be to look at effective
+content in e-learning systems aimed specifically at physics. A good
+example is the design of effective physics videos \cite{vid}
+
+
 \section*{Timeline}
 
-%\bibliographystyle{ieeetr}
-%\bibliography{refs}
+\bibliographystyle{ieeetr}
+\bibliography{refs}
 
 \end{document}
 
