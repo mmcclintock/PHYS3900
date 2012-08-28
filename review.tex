@@ -1,0 +1,80 @@
+% latex template for a report
+% written by Michael McClintock
+
+\RequirePackage[l2tabu, orthodox]{nag} % warnings for obsolete stuff
+\documentclass[12pt,a4paper]{article}  % article class
+
+% font setup
+\usepackage{ifluatex}
+\ifluatex
+    \usepackage[no-math]{fontspec} % keep standard math
+    \setmainfont[Ligatures=TeX]{Linux Libertine}
+    \setsansfont[Ligatures=TeX]{Linux Biolinum}
+    \setmonofont[Ligatures=TeX]{Inconsolata}
+\else
+    \usepackage[T1]{fontenc}
+    \usepackage{inconsolata}
+\fi
+\usepackage{microtype}
+
+% useful packages
+\usepackage[svgnames]{xcolor}          % color commands
+\usepackage{graphicx}                  % including graphics (use eps)
+\usepackage[margin=20mm]{geometry}     % set margins
+\usepackage{amsmath,amssymb,cancel,bm} % math \bm for bold math
+\usepackage[hidelinks]{hyperref}       % clickable links
+\usepackage{url}                       % format urls
+\usepackage{cleveref}                  % convenient refrencing use \Cref
+\usepackage{paralist}                  % compact itemize/enumerate
+\usepackage[hang, small, bf, margin=20pt]{caption} % captions for figures
+\usepackage{setspace}%\onehalfspacing               % 1.5 line spacing
+\setlength{\parindent}{0cm}\usepackage{parskip}    % paragraph skip
+\usepackage[                                   % SI units
+    load-configurations=abbreviations,         % unit abrev.
+    separate-uncertainty=true,                 % plus minus in uncertainty
+    inter-unit-product=\ensuremath{{}\cdot{}}, % dot between units
+    per-mode=symbol-or-fraction                % per style
+]{siunitx}
+% \usepackage{todonotes} % use \todo{blah blah} options inline/noline/nolist/color
+% \usepackage{minted}  % code highlighting requires pygments
+% \usepackage[english]{babel} % other languages
+% \usepackage[nottoc,numbib]{tocbibind} % refs in toc
+
+\begin{document}
+
+\begin{center}
+  \Large Peer Review: Addressing Learning Objectives in PHYS1002
+  \\[1cm]
+\end{center}
+
+As the proposal states the main goals of the project is to highlight
+difficulties with the current approach of teaching PHYS1002
+(specifically multidisciplinary aspects) and to provide some sample
+material that could be used to improve the class. First off, I think
+this is an interesting problem. It's the type of problem that is often
+overlooked because of various reasons but has the potential to greatly
+improve the class.  I like the fact that the proposal is very clear
+and succinct. The language is appropriate and very readable. The aim
+section is good.
+
+From my point of view the major weakness of the proposal is the
+absence of intent to validate the findings objectively. Whilst I agree
+that most of the findings (from interviewing students/tutors) will be
+subjective and qualitative it should be a goal to find a way to
+objectively test the new material that is created for PHYS1002. The
+findings will have far more impact if there is some real evidence (not
+subjective) that the new material can improve PHYS1002.
+
+In my opinion there are also some minor weaknesses in the proposal.
+The section on project significance doesn't actually address any
+features of \emph{this} project instead it contains a general
+statement and a reference. There should be a reference list at the
+end. Finally I feel the expected outcomes sections could be better.
+For example, a list of issues in relation to PHYS1002 as found from
+interviews should be an expected outcome.
+
+Overall I would give this proposal 5 out of 7.
+
+\end{document}
+
+% v: set spell:
