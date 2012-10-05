@@ -4,7 +4,7 @@
 		{
 			"cmd":
 			[
-				"pandoc -s --template=pandoc-latex.tpl --latex-engine=lualatex --toc --bibliography=refs.bib --csl=ieee -o ${file_base_name}.pdf $file_name"
+				"pandoc -s --template=pandoc-latex.tpl --latex-engine=lualatex --toc --bibliography=refs.bib --csl=ieee.csl -o ${file_base_name}.pdf $file_name"
 			],
 			"name": "pandoc -> pdf",
 			"path": "$PATH:$HOME/.cabal/bin",
