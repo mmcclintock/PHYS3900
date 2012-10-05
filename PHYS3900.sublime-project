@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/michael/PHYS3900"
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "pandoc -> pdf",
+			"shell": true,
+			"path": "$PATH:$HOME/.cabal/bin",
+			"cmd": ["pandoc -s --template=pandoc-latex.tpl --latex-engine=lualatex --toc --bibliography=refs.bib --csl=ieee -o ${file_base_name}.pdf $file_name"]
+		}	
+	]
+}

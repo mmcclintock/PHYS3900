@@ -7,5 +7,5 @@
 *.bbl
 *.blg
 keys*
-*.sublime-*
+*.sublime-workspace
 physgap
