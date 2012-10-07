@@ -6,6 +6,8 @@
 *.fls
 *.bbl
 *.blg
+*.gz
+*.toc
 keys*
 *.sublime-workspace
 physgap
