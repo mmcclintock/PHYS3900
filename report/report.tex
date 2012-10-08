@@ -206,7 +206,7 @@ The following directory structure was used (.md is the extension of a markdown f
 \item static (all images go in this folder)
 \end{itemize}
 
-This directory structure was designed to be simple and generic. It is remarkably easy to add new classes to the app just create a new folder in the classes directory and add some content. When the app is generated all the navigation menus will be updated and the new content added.
+This directory structure was designed to be simple and generic. It is remarkably easy to add new modules and even classes to the app. For example to add a new class just create a new folder in the classes directory and add some content. When the app is generated all the navigation menus will be updated and the new content added.
 
 \subsubsection{Collaboration and Version Control}
 
@@ -221,7 +221,7 @@ The main idea that we used when generating the app is that the resulting web app
 \item The content (markdown files)
 \item The static content (mainly images)
 \item Javascript files (3rd party libraries for buttons, math rendering, etc.)
-\item Style files (CSS files controls things like font sizes and colours)
+\item Style files (CSS files for things like font sizes and colours)
 \item HTML templates (provide the framework of the app where content gets inserted)
 \end{itemize}
 
@@ -259,7 +259,62 @@ The results will be discussed in the following section.
 
 \section{Results}
 
+We were able to build apps for 5 different platforms (iOS, Android, webOS, Symbian and Windows Phone) of which we were able to test the final product on both iOS and Android. By following the methodology described above we succeeded in producing apps for multiple platforms created from the same content source. After supplying the content it takes about 3 minutes to update and rebuild the apps for all 5 platforms.
+
+We authored 5 modules for students to read (See \Cref{fig:menu}) complete with images, equations and accompanying text. All the code and content for this project is available at:
+\begin{quote}\url{https://github.com/mmcclintock/physgap}\end{quote}
+The apps are available at:
+\begin{quote}\url{https://build.phonegap.com/apps/195010/share}\end{quote}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.9\textwidth]{menu.png}
+\caption{Shows a menu for the 5 modules we created for the app.}
+\label{fig:menu}
+\end{figure}
+
+\subsection{Student Feedback}
+
+In the short time we were allocated for this project we decided to focus on building a working mobile application with sample content that students may actually find useful. As a result we did not have time or the means to launch large-scale testing where we could objectively analyze the quality and effectiveness of the app. However we did receive some feedback from students some of which we will discuss in this section.
+
+23 students responded to our online survey leaving feedback for the app. The students were asked a review the app by rating various aspects on a scale from 1 to 5. 1 being the worst and 5 being the best. Here are the average ratings for some questions.
+
+\begin{itemize}
+\item Was the app helpful? 4.09
+\item Was the format pleasing? 3.95
+\item Would you use this app? 4.56
+\item Did the app help me understand Pascal's Principle? 3.5 
+\item Did the app help me understand buoyancy? 3.3
+\item Did the app help me understand Bernoulli's Principle? 3.3
+\item Did the app help me understand viscous flow? 3.3
+\end{itemize}
+
+While these results are promising we were more interested in hearing student comments about what they liked or didn't like about the app. Here are some student comments.
+
+\rule[0.5ex]{1\columnwidth}{1pt}
+"Loaded quickly with Google Chrome. More user interaction. A glossary of terms. More specific info to know what the questions in the Pre-reading quizzes ask."
+\\[3mm]
+"General writing could be improved, worked examples need more working with clear explanations beside it. Annotated pictures and deconstruction of equations would be appreciated."
+\\[3mm]
+"It is an app for phones, this itself is the best thing. Include in it all content taught in the course."
+\\[3mm]
+"The text posed questions that provoked thought...about principles. Bravo! The text then gave answers. Do more of that bite-sized stuff. Continue to speak in everyday language, where possible, while still being scientific. Keep provoking thought, dig deeper, give answers, reinforce with with visual examples of why things work the way they do."
+\\[3mm]
+"Easy to use, easy to access and good information. Could have questions to test understanding."
+\\[3mm]
+"It divided the relevant material into clearly decipherable categories and provided useful visual aid. The issue with the 'math processing errors' meant that I missed out on a great deal of potentially useful information and the examples didn't make as much sense."
+\\[3mm]
+"More convient and accessible. Definitely get it up and running for apple iphones as majority of people will have this and use them" \\
+\rule[0.5ex]{1\columnwidth}{1pt}
+
+\subsection{Li}
+
+
 \section{Discussion}
+
+\section{Summary}
+
+\section{Self Assessment}
 
 \bibliographystyle{ieeetr}
 \bibliography{refs}
