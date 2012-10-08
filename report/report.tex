@@ -27,7 +27,7 @@
 \usepackage{cleveref}                  % convenient refrencing use \Cref
 \usepackage{paralist}                  % compact itemize/enumerate
 \usepackage[hang, small, bf, margin=20pt]{caption} % captions for figures
-\usepackage{setspace}%\onehalfspacing               % 1.5 line spacing
+\usepackage{setspace}\onehalfspacing               % 1.5 line spacing
 \setlength{\parindent}{0cm}\usepackage{parskip}    % paragraph skip
 \usepackage[                                   % SI units
     load-configurations=abbreviations,         % unit abrev.
@@ -43,7 +43,7 @@
 \begin{titlepage}
 \begin{center}
 \textsc{\LARGE PHYS3900 Final Project}\\[1cm]
-{\LARGE Content Generation for Smartphone Based Physics Learning}\\[2cm]
+{\LARGE Smartphone Based Physics Learning}\\[2cm]
 \begin{minipage}[t]{0.6\columnwidth} \large
 \begin{description}
 \itemsep2mm
@@ -52,7 +52,7 @@
 \item [\emph{Partner:}] Alex van Nunen
 \item [\emph{Date:}] October 8, 2012
 \item [\emph{Email:}] michael.mcclintock@uqconnect.edu.au
-\item [\emph{Supervisors:}] -
+\item [\emph{Supervisors:}] Dr. Tim McIntyre, Dr Margaret Wegener
 \end{description}
 \end{minipage}
 \vfill
@@ -126,29 +126,36 @@ Ab.
 
 \section{Methodology and Design}
 
+The conventional method for creating mobile applications (apps) is called native app development and the process depends heavily on the mobile operating system. The advantages of the "native" approach is that apps are very responsive (fast) and have full access to device specific features. On the other hand creating native apps takes time, significant platform specific knowledge and programming skills.
 
-\subsection{Building the Mobile Applications}
+A number of different mobile operating systems have emerged each with their own specific ecosystem of tools for creating native apps. For example there is iOS (Apple), Android (Google), Windows Phone (Microsoft), WebOS (HP), Blackberry OS and Bada (Samsung). The reality is that students will have smartphones with a variety of different operating systems.
 
-The conventional method for creating mobile applications (apps) is called native app development and the process depends heavily on the mobile operating system. The advantages of the "native" approach is that apps are very responsive (fast) and have full access to device specific features.
+For this project we decided to take a "web" based approach for creating the mobile applications (apps). The main reason for this choice was platform independence. Every mobile operating system has a web browser that when given some HTML input will render more or less the same output across all devices and operating systems.
 
-However a number of different mobile operating systems have emerged each with their own specific ecosystem of tools for creating native apps. For example there is iOS (Apple), Android (Google), Windows Phone (Microsoft), WebOS (HP), Blackberry OS and Bada (Samsung). The reality is that students will have smartphones with a variety of different operating systems. So any decent m-learning system needs to be a cross-platform solution.
+Below is an outline of the process we used.
+\begin{enumerate}
+\item Create the content.
+\item Convert the content into HTML and include additional libraries that make the result look and feel like a native app.
+\item For each platform (iOS, Android, etc..) make a simple native "wrapper" that runs a web browser to view the result.
+\end{enumerate}
+The following sections will describe each step in more detail.
 
+\subsection{Creating the content}
 
+The target audience for the apps were first year science students studying PHYS1171 at the University of Queensland. PHYS1171 is an introductory physics course with a focus on biological applications. We focused on writing content for the fluid part of the course. This included topics such as pressure, Pascal's Principle, buoyancy, non-viscous flow and viscous flow.
 
-\subsection{Content format}
+\subsubsection{Content format}
 
-In order to address the project goals we started by looking at the content
-format. What is an effective way to author content for a physics app and for
-physics in general? Below are some characteristics of the content format which
-we thought were important.
+Before writing the content we needed to choose a format. We asked ourselves, what is an effective way to author content for a physics app? Below are some characteristics of the content format which we thought were important.
 
 \begin{itemize}
 \item First the format should be simple. The generation of quality physics content is what the author should be focusing on. The format shouldn't get in the way. It should be simple enough that anyone can write content for the apps.
 \item The format should be a well established standard with tested tools for conversion to other formats.
 \item It should be easy to insert text, math equations, images, videos links and references.
+\item A plain text, freely available solution is desirable.
 \end{itemize}
 
-Using the above charecteristics the format we decided to use for this project was Markdown QUOTE!. Perhaps the best way to describe Markdown is by example. \Cref{fig:md} shows some markdown text along with the final output on a mobile device. The example shows a heading, an image, text and a math equation (using tex notation).
+Using the above characteristics the format we decided to use for this project was Markdown \cite{md}. Perhaps the best way to describe Markdown is by example. \Cref{fig:md} shows some markdown text along with the final output on a mobile device. The example shows a heading, an image, text and a math equation (using tex notation).
 
 \begin{figure}[htb]
 \rule[0.5ex]{1\columnwidth}{1pt}
@@ -174,121 +181,85 @@ $F_{gravity}=F_{buoyant}=m_f g$
 \label{fig:md}
 \end{figure}
 
+\subsubsection{Content Structure}
 
-\subsection{s}
+The idea of the physics app is to give students access to extra content that reinforces concepts taught in lectures and in textbooks. It was our goal to produce small modules which could be read in approximately 5 minutes. These modules generally included some images and text and were written in an informal, friendly style.
 
+The following directory structure was used (.md is the extension of a markdown file)
+\begin{itemize}
+\item content (folder containing all the content)
+\begin{itemize}
+\item classes (folder containing all the classes)
+\begin{itemize}
+\item classes.md (short description of the app)
+\item PHYS1171 (folder containing PHYS1171 specific content)
+\begin{itemize}
+\item PHYS1171.md (short description of PHYS1171)
+\item buoyancy.md
+\item pressure.md
+\item pascal.md
+\item viscous.md
+\item nonviscous.md
+\end{itemize}
+\end{itemize}
+\end{itemize}
+\item static (all images go in this folder)
+\end{itemize}
 
+This directory structure was designed to be simple and generic. It is remarkably easy to add new classes to the app just create a new folder in the classes directory and add some content. When the app is generated all the navigation menus will be updated and the new content added.
 
+\subsubsection{Collaboration and Version Control}
 
+In order to collaborate with other content authors and to manage different versions. The whole project was managed using Git \cite{git} and hosted online at Github \cite{github}. While these tools are usually associated with software development they work extremely well for any text based projects and provide a well established environment for collaboration. 
 
+\subsection{Transforming the content into a "Web App"}
 
+The previous section detailed the method we used to generate content. The next task was to take all the content and transform it into a "web app". A "web app" is basically a whole bunch of web files (Usually HTML, Javascript, CSS, Images). When these files are loaded into a browser you get the look and feel of a mobile phone application. 
 
+The main idea that we used when generating the app is that the resulting web app is a function of the the following input
+\begin{itemize}
+\item The content (markdown files)
+\item The static content (mainly images)
+\item Javascript files (3rd party libraries for buttons, math rendering, etc.)
+\item Style files (CSS files controls things like font sizes and colours)
+\item HTML templates (provide the framework of the app where content gets inserted)
+\end{itemize}
 
+By using an automated system we were able to effectively "compile" the web app. In other words we could write content and hit compile and the web app was ready to be packaged and distributed.
 
+\subsection{Packaging and Distributing the App}
 
+The last part of the process is to package the "web app" and provide a means for users to install the app. We used an online build service called PhoneGap Build \cite{phonegap} to automate this. PhoneGap Build takes a directory of web files (web app) and creates packaged native applications for a wide array of mobile operating systems including iOS and Android. When the packaged application is executed the web files are loaded into the device browser. So the result looks and feels like a standard app (see \Cref{fig:md}).
 
+Finally PhoneGap Build provides a website where users can download and test the packages (shown in \Cref{fig:pg}). At this stage after thorough testing the apps could be submitted to the respective App Stores for each platform and could be installed by anyone.
 
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.9\textwidth]{phonegap.png}
+\caption{PhoneGap Build website for the packaged apps.}
+\label{fig:pg}
+\end{figure}
 
+\subsection{Receiving feedback from students}
 
+In order to receive feedback on the App and the physics content, we created an online survey where students can answer questions and leave comments. We were very interested in how students used the app. Below are some questions from the survey
 
+\begin{itemize}
+\item What type of device was used?
+\item Did the app work? If not what was the issue?
+\item Was the app helpful?
+\item Did the app help in understanding the lecture topics?
+\item Was the format pleasing?
+\item What was the best thing about the app?
+\item What could be improved?
+\item Would you use this app?
+\end{itemize}
 
+The results will be discussed in the following section.
 
+\section{Results}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-% Again when it comes to designing the solution there are two separate
-% aspects. The first is the method of delivering the content and the
-% second is the design of the content itself. While the second aspect is
-% the main focus of the project it cannot be tested without an effective
-% solution to the problem of content delivery.
-
-
-% \subsubsection*{Content Delivery}
-
-% Web 2.0 technologies such as blogs, wikis and interactive websites
-% have changed the face of online interaction and collaboration
-% \cite{procsmart}. These online applications are becoming good enough
-% that at times it's hard to know you're not running a native application
-% on your PC. Also it is worth noting that web technologies (HTML, CSS
-% and javascript) are open-source, cross-platform, widespread and mature. 
-
-% The major problem of delivering content effectively to the large
-% number of smartphone and tablet like devices is dealing with their
-% differences.  To develop a native application for Android users, the
-% developer must be proficient with java and understand the Android
-% specific libraries. A similar but conflicting approach is needed for
-% iOS devices where one must understand Objective-C programming and the
-% Apple specific toolkits. This all becomes very overwhelming when the
-% goal is to achieve a simple content delivery system. 
-
-% Luckily web browsers exist on all devices that comply to standard web
-% technologies. This makes it possible to design u-learning content and
-% then deliver it to the multitude of device in a consistent
-% maintainable format. One project that aims to simplify this process is
-% called PhoneGap \cite{phonegap}. To achieve simple content delivery
-% this project aims to follow the approach of developing u-learning
-% material using web technologies that are deliverable to a number of
-% devices using technologies such as PhoneGap.
-
-% \subsubsection*{U-Learning Physics Content}
-
-% The content itself will be tailored to first year physics students at
-% the University of Queensland. More specifically this project will be
-% targeting the Fluids component of PHYS1171. The material will focus
-% on the topics of pressure/depth, buoyancy and the fluid dynamics of
-% non-viscous fluids. Both Alex and I will choose a topic to
-% construct material for. The proposed method is as follows
-
-% \begin{itemize}
-%   \item Brainstorm available methods and construct a concept map
-%   \item Select appropriate material from available sources
-%   \item Prototype the material and deliver to devices
-%   \item Develop test for students and structure for feedback
-%   \item Analyse feedback
-%   \item Write report with results and future recommendations/changes
-% \end{itemize}
-
-% The approach to designing content will be to look at effective content
-% in e-learning systems aimed specifically at physics. A good example is
-% the design of effective physics videos \cite{vid}. Videos and
-% animation based content isn't the only way to keep users interested.
-% Simple things like the format and style of accompanying text and
-% graphics matter. When designing the solution we will look for
-% resources and examples of effective content layout and styling on
-% mobile devices. If time permits the possibility of adding interactive
-% components like the ability for users to leave comments will be looked
-% at.
-
-% \section*{Timeline}
-
-% \begin{itemize}
-% \item Week 1-3. Familiarisation with topic. Produce Written proposal.  
-% \item Week 3-4. Research into physics content best
-%   practices.  Develop the structure of the content to be presented
-% \item Week 4-5. Develop preliminary content using web technologies
-% \item Week 5-6. Find/implement a simple method for delivering the
-%   preliminary content to physical devices 
-% \item Week 7-8. Refine material and prepare for trial on students 
-% \item week 8-9. Test system on students and collect feedback 
-% \item week 9-10. Analyse results and prepare report
-% \end{itemize}
+\section{Discussion}
 
 \bibliographystyle{ieeetr}
 \bibliography{refs}
