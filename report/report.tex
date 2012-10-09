@@ -75,54 +75,33 @@ Ab.
 % sections
 \section{Introduction and Background}
 
-% It is no secret that smartphones, tablets and other portable
-% multimedia devices are on the rise. As reported in February 2012,
-% 487.7 million smartphones were shipped worldwide 2011.  This figure,
-% up 63\% from 2010, also meant that smarthphone sales have overtaken
-% the sale of personal computers \cite{canalys}. 
+It is no secret that smartphones, tablets and other portable multimedia devices are on the rise. As reported in February 2012, 487.7 million smartphones were shipped worldwide 2011.  This figure, up 63\% from 2010, also meant that smarthphone sales have overtaken the sale of personal computers \cite{canalys}. What's even more interesting is the constant use of smartphones by students. An infographic published on Hackcollege.com reports that 25\% of students use their mobile devices at least once a class period \cite{hc}.
 
-% There are a number of factors that make smartphone based learning
-% (often referred to as ubiquitous learning or just ``u-learning") an
-% effective, if not inevitable, complement to the more traditional
-% methods of course and content delivery. These factors include the
-% widespread smartphone reliance of university students and staff, high
-% convenience, powerful multimedia capabilities and good wireless and
-% internet connectivity \cite{worry}.
+There are a number of factors that make smartphone based learning (often referred to a mobile learning or just m-learning) an
+effective, if not inevitable, complement to the more traditional
+methods of course and content delivery. These factors include \cite{worry}:
+\begin{itemize}
+\item widespread smartphone reliance of university students and staff
+\item high convenience
+\item powerful multimedia capabilities (including browser technology)
+\item good wireless and internet connectivity 
+\end{itemize}
 
-% While many universities have developed campus-wide tools for
-% smartphones. The use of u-learning solutions tailor-made for specific
-% courses or subject areas is not widely accepted \cite{procsmart}.
-% One reason is the lack of mature technology for content delivery that
-% addresses technical issues such as platform independence. Another is the
-% lack of examples and trials related to the design of content for
-% u-learning systems.
+Smartphone use and mobile learning have become quite a popular topic in education. Distance learning research provides a justification for this popularity \cite{keegan}
+\begin{quote}It is not technologies with inherent pedagogical qualities that are successful in distance education, but technologies that are generally available to citizens.\end{quote}
 
-% This project has two separate goals. The first is to find a simple
-% solution that allows the delivery of u-learning content to smartphones
-% and tablets. The second and more important goal is to produce and test
-% some u-learning material for first year physics students.
+With most experts agreeing that the time for m-learning is now we are yet to see widespread use in education or industry \cite{pie}. There could be multiple reasons for this including technical and distribution issues which will be addressed in this report.
 
-% While subject specific u-learning material is a relatively new concept
-% there is a great deal of research into what makes good ``e-learning"
-% material where e-learning refers to the use of computers and internet
-% in learning. Many of the generally accepted approaches to e-learning
-% may be equally effective when transferred to a smartphone based
-% system.
+\section{Project Goals}
 
-% \section*{Significance of Research and Expected Outcomes}
+The main goal of this project was to produce a working m-learning system with the following characteristics.
+\begin{itemize}
+\item The system should work across multiple platforms and devices.
+\item The system should use freely available technology.
+\item Once developed it should be a straightforward process to go from content to working apps.
+\end{itemize}
 
-% Any method or aid that helps students absorb and understand a topic at
-% a fundamental level is valuable to instructors. Finding this type of
-% tool for physics is even more significant because the ideas and
-% concepts of physics are generally more abstract and fundamental
-% compared to other subject areas. 
-
-% Designing, implementing and testing a u-learning system for a small
-% part of a first year physics course allows for evaluation of the
-% effectiveness of smartphone based systems. Following this project
-% instructors should have some evidence of the advantages or
-% disadvantages of u-learning systems for first year physics. As well as
-% some ideas about how to create their own systems.
+The secondary goal was to produce some content tailored for a first year physics class. This allowed us to test the authoring system, receive feedback from students and investigate the type of content that would be effective on mobile devices.
 
 \section{Methodology and Design}
 
@@ -130,7 +109,7 @@ The conventional method for creating mobile applications (apps) is called native
 
 A number of different mobile operating systems have emerged each with their own specific ecosystem of tools for creating native apps. For example there is iOS (Apple), Android (Google), Windows Phone (Microsoft), WebOS (HP), Blackberry OS and Bada (Samsung). The reality is that students will have smartphones with a variety of different operating systems.
 
-For this project we decided to take a "web" based approach for creating the mobile applications (apps). The main reason for this choice was platform independence. Every mobile operating system has a web browser that when given some HTML input will render more or less the same output across all devices and operating systems.
+For this project we decided to take a "web" based approach for creating the mobile applications. The main reason for this choice was platform independence. Every mobile operating system has a web browser that when given some HTML input will render more or less the same output across all devices and operating systems.
 
 Below is an outline of the process we used.
 \begin{enumerate}
@@ -229,7 +208,7 @@ By using an automated system we were able to effectively "compile" the web app. 
 
 \subsection{Packaging and Distributing the App}
 
-The last part of the process is to package the "web app" and provide a means for users to install the app. We used an online build service called PhoneGap Build \cite{phonegap} to automate this. PhoneGap Build takes a directory of web files (web app) and creates packaged native applications for a wide array of mobile operating systems including iOS and Android. When the packaged application is executed the web files are loaded into the device browser. So the result looks and feels like a standard app (see \Cref{fig:md}).
+The last part of the process is to package the "web app" and provide a means for users to install the app. We used an online build service called PhoneGap Build \cite{phonegap} to automate this. PhoneGap Build takes a directory of web files (web app) and creates packaged native applications for a wide array of mobile operating systems including iOS and Android. When the packaged application is executed the web files are loaded into the device browser. So the result looks and feels like a standard app (see \Cref{fig:md} and \ref{fig:menu}).
 
 Finally PhoneGap Build provides a website where users can download and test the packages (shown in \Cref{fig:pg}). At this stage after thorough testing the apps could be submitted to the respective App Stores for each platform and could be installed by anyone.
 
@@ -277,7 +256,7 @@ The apps are available at:
 
 In the short time we were allocated for this project we decided to focus on building a working mobile application with sample content that students may actually find useful. As a result we did not have time or the means to launch large-scale testing where we could objectively analyze the quality and effectiveness of the app. However we did receive some feedback from students some of which we will discuss in this section.
 
-23 students responded to our online survey leaving feedback for the app. The students were asked a review the app by rating various aspects on a scale from 1 to 5. 1 being the worst and 5 being the best. Here are the average ratings for some questions.
+23 students responded to our online survey leaving feedback for the app. The students were asked to review the app by rating various aspects on a scale from 1 to 5. 1 being the worst and 5 being the best. Here are the average ratings for some questions.
 
 \begin{itemize}
 \item Was the app helpful? 4.09
@@ -289,7 +268,7 @@ In the short time we were allocated for this project we decided to focus on buil
 \item Did the app help me understand viscous flow? 3.3
 \end{itemize}
 
-While these results are promising we were more interested in hearing student comments about what they liked or didn't like about the app. Here are some student comments.
+While these results are promising we were more interested in hearing student comments about what they liked or didn't like about the app. Here are some results.
 
 \rule[0.5ex]{1\columnwidth}{1pt}
 "Loaded quickly with Google Chrome. More user interaction. A glossary of terms. More specific info to know what the questions in the Pre-reading quizzes ask."
