@@ -1,0 +1,75 @@
+% latex template for a article
+% written by Michael McClintock
+
+\RequirePackage[l2tabu, orthodox]{nag} % warnings for obsolete stuff
+\documentclass[10pt, a4paper]{article}  % article class
+
+% font setup
+\usepackage{ifluatex}
+\ifluatex
+    \usepackage[no-math]{fontspec} % keep standard math
+    \setmainfont[Ligatures=TeX]{Linux Libertine}
+    \setsansfont[Ligatures=TeX]{Linux Libertine}
+    \setmonofont[Ligatures=TeX]{Inconsolata}
+\else
+    \usepackage[T1]{fontenc}
+    \usepackage{inconsolata}
+\fi
+\usepackage{microtype}
+
+% useful packages
+\usepackage[svgnames]{xcolor}          % color commands
+\usepackage{graphicx}                  % including graphics (use eps)
+\usepackage{multicol}
+\usepackage[margin=15mm]{geometry}     % set margins
+\usepackage{amsmath,amssymb,cancel,bm} % math \bm for bold math
+\usepackage[hidelinks]{hyperref}       % clickable links
+\usepackage{url}                       % format urls
+\usepackage{cleveref}                  % convenient refrencing use \Cref
+\usepackage{paralist}                  % compact itemize/enumerate
+\usepackage[hang, small, bf, margin=20pt]{caption} % captions for figures
+\usepackage{setspace}%\onehalfspacing               % 1.5 line spacing
+\setlength{\parindent}{0cm}\usepackage{parskip}    % paragraph skip
+\usepackage[                                   % SI units
+    load-configurations=abbreviations,         % unit abrev.
+    separate-uncertainty=true,                 % plus minus in uncertainty
+    inter-unit-product=\ensuremath{{}\cdot{}}, % dot between units
+    per-mode=symbol-or-fraction                % per style
+]{siunitx}
+% \usepackage{todonotes} % use \todo{blah blah} options inline/noline/nolist/color
+% \usepackage{minted}  % code highlighting requires pygments
+% \usepackage[english]{babel} % other languages
+% \usepackage[nottoc,numbib]{tocbibind} % refs in toc
+
+\begin{document}
+
+\begin{center}
+    \rule[0.5ex]{1\columnwidth}{1pt}
+    \\[4mm]
+    \textbf{\textsc{\Huge Digital Notebooks for Computation}}
+    \\[6mm]
+    \textit{\Large A classy interface for scientific computing}
+    \\[6mm]
+    \textsc{\large By Michael McClintock}
+    \\[4mm]
+    \rule[0.5ex]{1\columnwidth}{1pt}
+\end{center}
+
+\begin{multicols}{2}
+
+Some people are really good at solving problems with pen and paper. There is
+just something special about solving a problem with just your mind, a pen and
+some paper. When you're done there is a feeling of value associated with your
+pages of notes and derivations. If you write it clearly with comments well all
+the better because now you can share it with others and there is a good chance
+they will be able to follow. As you know though this all falls apart when you
+want to do some data processing on a computer.
+
+For some once we enter the computational realm things get complex and unclear.
+
+
+
+
+\end{multicols}
+
+\end{document}
