@@ -2,7 +2,7 @@
 % written by Michael McClintock
 
 \RequirePackage[l2tabu, orthodox]{nag} % warnings for obsolete stuff
-\documentclass[10pt, a4paper]{article}  % article class
+\documentclass[11pt, a4paper]{article}  % article class
 
 % font setup
 \usepackage{ifluatex}
@@ -58,35 +58,44 @@
 \begin{multicols}{2}
 
 Some people are really good at solving problems with pen and paper. There is
-just something special about solving a problem with just your mind, a pen and
-some paper. 
+just something special about solving a problem with nothing more than your
+mind, a pen and some paper.
 
 When you're done there is a feeling of value associated with your pages of
 notes and derivations. If you write it clearly with comments well all the
 better, because now you can share it with others and there is a good chance
 they will be able to follow along. This is all well and good until you want to
-do some number crunching. For some (most) problems a computer based solution
-is orders of magnitude more effective.
+do some number crunching. For a wide range of problems a computer based
+solution is orders of magnitude more effective.
 
-For some once we enter the computational realm things get complex and unclear.
-There are command lines, compilers, libraries, dependencies, formats and many
-other scary things. Try asking someone working with scientific computations
-how they solved their problem. More often than not you will get a very
-technical answer to a physical problem. What is worse, try asking them to
+For some people, once we enter the computational realm things get complex and
+unclear. There are command lines, compilers, libraries, dependencies, formats
+and many other scary things. Try asking someone working with scientific
+computations how they solved their problem. More often than not you will get a
+very technical answer to a physical problem. What is worse, try asking them to
 \emph{show} you how they solved the problem. They tend to give you some
-confusing source code and maybe some graphs. Even solving simple problems can be uninformative.
+confusing source code and maybe some graphs. Even solving simple problems can
+lead to unweilding solutions.
 
 Next is the often \emph{steep} learning curve associated with computational
 tools. There are some amazing tools out there but sometimes you just don't
 feel like learning another gigantic peice of software from scratch when all
-you wan't is some simple computations. Wouldn't it be nice to work using a
+you wan't are some simple computations. Wouldn't it be nice to work using a
 medium that is clear, elegant and powerful. An enviroment where your
 computational solution is contained and presentable "as is" just like a pen
 and paper solution.
 
 Recently there has been a push to create systems where computer based
-solutions can be written, executed and presented in a format that looks and
-\emph{feels} like the traditional pen and paper approach to problem solving.
+solutions can be written, executed and presented in a format which looks and
+\emph{feels} like the traditional pen and paper approach. Brian Granger, a
+Physics Proffesor at California Polytechnic State University and lead
+developer of IPython Notebooks, associates data processing with storytelling.
+
+\begin{quote} 
+\textit {Data is useless on its own, you need to leverage the data to tell a
+story.}
+\end{quote}
+
 You may be familiar with some systems for creating "interactive digital
 notebooks" or "computable documents". Mathematica provide a very popular
 solution which exposes the mathematica language in a visually pleasing format.
@@ -97,10 +106,84 @@ contain text, graphics, sound, calculations, typeset expressions, and user
 interface elements.}
 \end{quote}
 
-More recently a solution has been developed for the python programming
-language. The technology is called IPython notebooks.
+The idea may also be familiar to programmers. Literate programming is a
+similar approach where source code and formatted text are fused into a more
+visually pleasing format that can still be executed on a computer. More
+recently a solution called IPython Notebooks has been developed which utilizes
+the python programming language. IPython Notebooks are an opensource,
+web-based, interactive computing enviroment.
+
+In case you've been living under a rock, python has become a popular language
+for scientific computing. This may be due to its availability (it's free),
+clear syntax, ecosystem of high quality libraries and the vibrant python
+community. In particular high performance libraries such as numpy, scipy and
+matplotlib help create a Matlab-like environment where computational scientists
+thrive.
+
+Here are some of the features that IPython notebooks provide.
+
+\begin{itemize}
+\item You can write, edit and build everything from right within your browser.
+The computations are handled behind the scenes on your computer by
+IPython.
+\item You can write python code that appears in different blocks in the
+notebook. Each block of code can utilize full power of python and all its
+libraries. Its even easy to execute R commands for statistical methods.
+\item The cells can be surrounded with areas of formated text (Headings,
+paragraphs etc.)
+\item Equations can be entered in Tex format which are then typeset when
+viewing the notebook
+\item Images and videos can be embeded and are often built from some code that
+exists at some other point in the notebook.
+\item The whole notebook is interactive. Which means any block of text or code
+can be editted and re-run where the results show up immeadiately.
+\item To work on your notebooks its as easy as launching IPython and opening
+up a browser.
+\item Because notebooks are stored in a standard JSON format they can be
+easily shared.
+\end{itemize}
+
+If any of this sounds interesting visit \url{http://nbviewer.ipython.org/} to
+see some notebooks in action. 
+
+Its perhaps no suprise that the technology has
+become increasingly popular. Fernando Perez the creator of IPython recently wrote
+
+\begin{quote}
+\textit{Since the notebook was introduced with IPython 0.12, it has proved to
+be very popular, and we are seeing great adoption of the tool and the
+underlying file format in research and education}
+\end{quote}
+
+But rolling code, formated text, equation rendering and multimedia support
+into an interactive document isn't something new. As mentioned before
+Mathematica Notebooks have been providing scientists and students with elegant
+interactive goodness for quite some time. There even exist other more open
+notebook systems like Sage Notebooks. So why all the excitement about
+IPython's solution?
+
+Well IPython notebooks are built from ground up using well established open
+standards. The format itself is JSON which is used prolificly in software and
+web applications for storing and transfering data. Text can be entered in
+Markdown which is also hugely popular being the text format of choice for
+popular websites such as StackOverflow, Reddit and Github. Equations can be
+entered in TeX notation which will most likey be familiar to scientists
+everywhere. Even the final result is standard-based. Its just HTML in a browser. 
+
+
+
+
+
 
 
 \end{multicols}
+
+The IPython Notebook for Data Science 
+http://www.youtube.com/watch?v=nRHBdkxVn48 
+Brian Granger
+
+The IPython notebook: a historical retrospective
+http://blog.fperez.org/2012/01/ipython-notebook-historical.html
+Fernando Perez
 
 \end{document}
