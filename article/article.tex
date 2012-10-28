@@ -63,7 +63,7 @@ just something special about solving a problem with nothing more than your
 mind, a pen and some paper.
 
 When you're done there is a feeling of value associated with your pages of
-notes and derivations. If you write it clearly with comments well all the
+notes and derivations. If you write it clearly with comments, well all the
 better, because now you can share it with others and there is a good chance
 they will be able to follow along. This is all well and good until you want to
 do some number crunching. For a wide range of problems a computer based
@@ -76,20 +76,20 @@ computations how they solved their problem. More often than not you will get a
 very technical answer to a physical problem. What is worse, try asking them to
 \emph{show} you how they solved the problem. They tend to give you some
 confusing source code and maybe some graphs. Even solving simple problems can
-lead to unweilding solutions.
+lead to unwieldy solutions.
 
 Next is the often \emph{steep} learning curve associated with computational
 tools. There are some amazing tools out there but sometimes you just don't
-feel like learning another gigantic peice of software from scratch when all
-you wan't are some simple computations. Wouldn't it be nice to work using a
-medium that is clear, elegant and powerful. An enviroment where your
+feel like learning another gigantic piece of software from scratch when all
+you want are some simple computations. Wouldn't it be nice to work using a
+medium that is clear, elegant and powerful. An environment where your
 computational solution is contained and presentable ``as is'' just like a pen
 and paper solution.
 
 Recently there has been a push to create systems where computer based
 solutions can be written, executed and presented in a format which looks and
 \emph{feels} like the traditional pen and paper approach. Brian Granger, a
-Physics Proffesor at California Polytechnic State University and lead
+Physics Professor at California Polytechnic State University and lead
 developer of IPython Notebooks, associates data processing with storytelling.
 \cite{granger}
 
@@ -98,9 +98,16 @@ developer of IPython Notebooks, associates data processing with storytelling.
 story.}
 \end{quote}
 
+For scientific computation the story is best told using a mix of comments,
+code, equations, interactive visualizations and graphs. Finding the perfect
+mix when presenting your work is a challenge. The power of digital notebooks
+is to let you do all this at one interface and save the result in one format
+so it is easy for people to follow along.
+
 You may be familiar with some systems for creating ``interactive digital
 notebooks'' or ``computable documents''. Mathematica provide a very popular
-solution which exposes the mathematica language in a visually pleasing format.
+solution which exposes the Mathematica language in a visually pleasing format.
+\cite{mm}
 
 \begin{quote}
 \textit{ Mathematica notebooks are structured interactive documents that can
@@ -112,15 +119,20 @@ The idea may also be familiar to programmers. Literate programming is a
 similar approach where source code and formatted text are fused into a more
 visually pleasing format that can still be executed on a computer. More
 recently a solution called IPython Notebooks has been developed which utilizes
-the python programming language. IPython Notebooks are an opensource,
-web-based, interactive computing enviroment.
+the python programming language. IPython Notebooks are an open-source, web-
+based, interactive computing environment. Below is a simple example of a
+IPython Notebook.
+
+\begin{center}
+\includegraphics[width=0.45\textwidth]{pic.png}
+\end{center}
 
 In case you've been living under a rock, python has become a popular language
 for scientific computing. This may be due to its availability (it's free),
 clear syntax, ecosystem of high quality libraries and the vibrant python
-community. In particular high performance libraries such as numpy, scipy and
-matplotlib help create a Matlab-like environment where computational scientists
-thrive.
+community. In particular high performance libraries such as Numpy, Scipy and
+Matplotlib \cite{py} help create a Matlab-like environment where computational
+scientists thrive.
 
 Here are some of the features that IPython notebooks provide.
 
@@ -129,33 +141,35 @@ Here are some of the features that IPython notebooks provide.
 The computations are handled behind the scenes on your computer by
 IPython.
 \item You can write python code that appears in different blocks in the
-notebook. Each block of code can utilize full power of python and all its
+notebook. Each block of code can utilize the full power of python and all its
 libraries. Its even easy to execute R commands for statistical methods.
 \item The cells can be surrounded with areas of formated text (Headings,
 paragraphs etc.)
 \item Equations can be entered in Tex format which are then typeset when
 viewing the notebook
-\item Images and videos can be embeded and are often built from some code that
+\item Images and videos can be embedded and are often built from some code that
 exists at some other point in the notebook.
 \item The whole notebook is interactive. Which means any block of text or code
-can be editted and re-run where the results show up immeadiately.
+can be edited and re-run where the results show up immediately.
 \item To work on your notebooks its as easy as launching IPython and opening
 up a browser.
 \item Because notebooks are stored in a standard JSON format they can be
 easily shared.
 \end{itemize}
 
-There are some very nice benifits of uncoupling the user interface (browser)
+There are some very nice benefits of uncoupling the user interface (browser)
 used to view notebooks from the computational resource (computer running
 IPython). It becomes possible, even easy to run your notebooks on high
 performance computers or clusters over the web. This opens the door for data
 intensive, scalable notebooks that would be inconvenient to run on your laptop
 computer. 
 
-These days with services like Amazon EC2 and Windows Azure it is possible to
-rent a large number of computing resources. So it is possible to run data
-intensive IPython Notebooks ``in the Cloud'' for processing gains. For instance
-this is from NotebookCloud documentation.
+These days with services like Amazon EC2 \cite{ec2} and Windows Azure
+\cite{azure} it is possible to rent a large number of computing resources.
+With these services its rather straightforward to run data intensive IPython
+Notebooks ``in the Cloud'' for processing gains. For instance NotebookCloud is
+a web-app created for exactly this purpose. This is from NotebookCloud
+documentation.
 
 \begin{quote}
 \textit{NotebookCloud is service that allows you to launch and control IPython
@@ -165,7 +179,7 @@ and access it from any modern web browser. You can set everything up in a
 minute or two, and it's very easy to use.}
 \end{quote}
 
-So its perhaps no suprise that the technology has become increasingly popular.
+So its perhaps no surprise that the technology has become increasingly popular.
 Fernando Perez the creator of IPython recently wrote. \cite{perez}
 
 \begin{quote}
@@ -178,30 +192,30 @@ But rolling code, formated text, equation rendering and multimedia support
 into an interactive document isn't something new. As mentioned before
 Mathematica Notebooks have been providing scientists and students with elegant
 interactive goodness for quite some time. There even exist other more open
-notebook systems like Sage Notebooks. So why all the excitement about
-IPython's solution?
+notebook systems like Sage Notebooks \cite{sage}. So why all the excitement
+about IPython's solution?
 
 Well IPython notebooks are built from ground up using well established open
-standards. The format itself is JSON which is used prolificly in software and
-web applications for storing and transfering data. Text can be entered in
+standards. The format itself is JSON which is used prolifically in software and
+web applications for storing and transferring data. Text can be entered in
 Markdown which is also hugely popular being the text format of choice for
 popular websites such as StackOverflow, Reddit and Github. Equations can be
-entered in TeX notation which will most likey be familiar to scientists
-everywhere. Even the final result is standard-based. Its just HTML in a
+entered in TeX notation which will most likely be familiar to scientists
+everywhere. Even the final result is standards-based. Its just HTML in a
 browser.
 
 With all these well established open technologies IPython notebooks have all
 the right ingredients to appeal to scientists, IT professionals and students.
 In fact educators and lectures have been quick to see the value of IPython
 notebooks as learning tools. Dr. C. Titus Brown is a assistant professor at
-michigan state university who has been using IPython notebooks for teaching
+Michigan State University who has been using IPython notebooks for teaching
 classes. Dr. Brown recently wrote about his experience of using IPython in a
 classroom environment. \cite{brown}
 
 \begin{quote} 
 \textit{The IPython Notebook (or ``ipynb'' for short) is one of the most
 exciting technologies for teaching and research that I've seen in recent
-years. It is a completely open source, well architected, and fairly stable
+years. It is a completely open source, well architectured, and fairly stable
 system for scientific computing and data exploration.}
 \end{quote}
 
@@ -211,42 +225,43 @@ best thing I've ever used for teaching.}}
 \end{quote}
 
 It's not just educators and rookie students who find IPython notebook
-apealling. As written on his website Randy Olsen is a PhD student at Michigan
+appealing. As written on his website Randy Olsen is a PhD student at Michigan
 State University. Here are his thoughts on the software. \cite{olson}
 
 \begin{quote}
 \textit{I do the majority of my post-experiment data analysis in Python
-nowadays, since it’s one of the few sanely-designed scripting languages out
-there with all the functionality I need. What I’ve been missing is a seamless
+nowadays, since its one of the few sanely-designed scripting languages out
+there with all the functionality I need. What I've been missing is a seamless
 user interface where I can both take notes about my research and perform my
 data analysis in the same location. IPython Notebook finally provides that.}
 \end{quote}
 
-When you share and collaborate on a project in a structured enviroment the
+When you share and collaborate on a project in a structured environment the
 results can be nothing short of amazing. With the growing number of internet
 tools and social media outlets it is becoming possible and even essential to
-collaborate online. One of the biggest success stroies for this approach is
-Github.com. Github is a website where mainly programmers and software engineers
-work on opensource projects using the popular version control system Git. The
-quality, scale and popularity of the Github ecosystem is amazing.
+collaborate online. One of the biggest success stories for this approach is
+Github.com \cite{gh}. Github is a website where mainly programmers and
+software engineers work on opensource projects using the popular version
+control system Git. The quality, scale and popularity of the Github ecosystem
+is amazing.
 
 Github like systems have been widely accepted in the IT community which have
-benifitted greatly as a result. However there is nothing specific about these
+benefited greatly as a result. However there is nothing specific about these
 ``Social Coding'' environments that make them unsuitable for scientists and
 students. Combining online ecosystems like GitHub with scientific computing
 tools like IPython Notebooks may provide a \emph{potent} mix where students,
 educators and scientists can collaborate. 
 
-The future looks promosing for online learning and collaboration in science.
+The future looks promising for online learning and collaboration in science.
 It is already possible to find examples where students are writing assignments
-as IPython Notebooks and managing them on github. When the due date arrives
+as IPython Notebooks and managing them on Github. When the due date arrives
 the lecturer can mark the notebooks online directly from Github. \cite{brown2}
 
-Only time will tell if the scientific comunity embraces online collaboration
+Only time will tell if the scientific community embraces online collaboration
 with tools like IPython Notebook. But is safe to say that this area of
 education is rapidly improving. With the astonishing growth of networked
-devices like smarthpones and tablets along with the ``Cloud Computing''
-revolution it seems systems like IPython Notebook wil only become more popular
+devices like smartphones and tablets along with the ``Cloud Computing''
+revolution it seems systems like IPython Notebook will only become more popular
 with students and scientists.
 
 \end{multicols}
